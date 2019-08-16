@@ -100,7 +100,7 @@ const UserForm = ({ errors, touched, values, status }) => {
                     Agree to Terms?
 
           <Field
-
+                        checked={values.terms}
                         type="checkbox"
                         name="terms" />
                     <span
