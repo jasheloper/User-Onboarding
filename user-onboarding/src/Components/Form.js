@@ -25,6 +25,7 @@ const UserForm = ({ errors, touched, values, status }) => {
 
 
         <div className="onboarding">
+          
             <h1>User Onboarding 1.0</h1>
             <h2>Please fill out the form below to onboard!</h2>
 
@@ -114,7 +115,8 @@ const UserForm = ({ errors, touched, values, status }) => {
 
             {users.map(user => (
 
-                <div>
+
+                <div className="new">
 
 
                     <p key={user.id}>
@@ -123,11 +125,16 @@ const UserForm = ({ errors, touched, values, status }) => {
 
                     </p>
 
-                    <br />
+                    
 
                 </div>
+            
+           
+              
 
             ))}
+
+<br /><br /><br /><br />
 
         </div>
 
@@ -136,6 +143,8 @@ const UserForm = ({ errors, touched, values, status }) => {
 
     );
 };
+
+
 
 const formikHOC = withFormik({
     mapPropsToValues({ name, email, password, terms }) {

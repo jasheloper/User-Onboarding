@@ -1,8 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap');
 
-body {
-  background-color: #e3e3e3;
+body{
+  background: url("./60238.jpg");
 }
 
 .App {
@@ -91,5 +91,22 @@ border: 3px solid #82cfc5;
   font-family: 'Share Tech Mono', monospace;
   font-size: 1rem; 
 }
+
+.new {
+  font-family: 'Share Tech Mono', monospace;
+  margin: 0 auto; 
+  font-size: 2rem;
+  padding: 1em; 
+  width: 200px; 
+  border-radius: 10px; 
+  -webkit-box-shadow: inset 10px 20px 16px 16px rgba(227,227,227,1);
+  -moz-box-shadow: inset 10px 20px 16px 16px rgba(227,227,227,1);
+  box-shadow: inset 10px 20px 16px 16px rgba(227,227,227,1);
+}
+
+.new p {
+  font-size: 1rem; 
+}
+
 
 
