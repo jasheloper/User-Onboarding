@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap');
+
+body {
+  background-color: #e3e3e3;
+}
+
+.App {
+  margin: 0 auto; 
+  max-width: 900px;
+  text-align: center; 
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.error {
+  background-color: red; 
+  color: white; 
+}
+
+.form {
+  margin: 0 auto; 
+  padding: 1em;
+  border-radius: 3em; 
+  width: 400px;
+  -webkit-box-shadow: inset 10px 20px 129px 42px rgba(34,178,156,1);
+-moz-box-shadow: inset 10px 20px 129px 42px rgba(34,178,156,1);
+box-shadow: inset 10px 20px 129px 42px rgba(34,178,156,1);
+font-family: 'Share Tech Mono', monospace;
+box-shadow: 10px 10px #7cc9bf;
+border: 3px solid #82cfc5;
+}
+
+.form button {
+  font-family: 'Share Tech Mono', monospace;
+  padding: 1em; 
+  width: 290px; 
+  font-size: 1rem;
+  border: 0; 
+  background-color: #080f0e;
+  color: #7cc9bf;
+}
+
+.field {
+  padding: 1em;
+  width: 200px; 
+  border-radius: 10px; 
+  border: 0;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.2rem;
+}
+
+.onboarding h1 {
+  color: #4a4541;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 3rem; 
+  color: #55b5a9;
+}
+
+.onboarding h2 {
+  color: #4a4541;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1rem; 
+}
+
+
