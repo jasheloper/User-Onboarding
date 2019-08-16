@@ -25,7 +25,7 @@ const UserForm = ({ errors, touched, values, status }) => {
 
 
         <div className="onboarding">
-          
+
             <h1>User Onboarding 1.0</h1>
             <h2>Please fill out the form below to onboard!</h2>
 
@@ -42,6 +42,23 @@ const UserForm = ({ errors, touched, values, status }) => {
                     <p className="error">{errors.name}</p>
                 )}
                 <br /> <br />
+
+
+
+                <Field component="select" className="role" name="role">
+                    <option>-Select Your Role-</option>
+                    <option value="dev">Software Developer</option>
+                    <option value="data">Data Scientist</option>
+                    <option value="ux">UX Designer</option>
+                </Field>
+
+                {touched.role && errors.role && (
+                    <p className="error">{errors.role}</p>
+                )}
+
+                <br /> <br />
+
+
 
 
 
@@ -83,7 +100,7 @@ const UserForm = ({ errors, touched, values, status }) => {
                     Agree to Terms?
 
           <Field
-                     
+
                         type="checkbox"
                         name="terms" />
                     <span
@@ -121,20 +138,21 @@ const UserForm = ({ errors, touched, values, status }) => {
 
                     <p key={user.id}>
                         <h2>{user.name} </h2>
+                        <p>{user.role}</p>
                         <p>{user.email}</p>
 
                     </p>
 
-                    
+
 
                 </div>
-            
-           
-              
+
+
+
 
             ))}
 
-<br /><br /><br /><br />
+            <br /><br /><br /><br />
 
         </div>
 
@@ -147,19 +165,31 @@ const UserForm = ({ errors, touched, values, status }) => {
 
 
 const formikHOC = withFormik({
-    mapPropsToValues({ name, email, password, terms }) {
+    mapPropsToValues({ name, role, email, password, terms }) {
         return {
             name: name || "",
+            role: role || "",
             email: email || "",
             password: password || "",
             terms: terms || false
         };
     },
     validationSchema: Yup.object().shape({
-        name: Yup.string().required("Who are you?"),
-        email: Yup.string().required("That email isn't going to work, sorry."),
-        password: Yup.number().required("Password is a number only.  Try again!"),
-        terms: Yup.bool().oneOf([true], 'Please agree.')
+        name: Yup.string()
+            .required("Who are you?"),
+
+        role: Yup.string()
+            .required("What do you do?"),
+
+        email: Yup.string()
+            .required("Um, we need your email."),
+
+        password: Yup.string()
+            .min(6, 'Password must be at least 6 chars')
+            .required("Password is required."),
+
+        terms: Yup.bool()
+            .oneOf([true], 'Please agree.')
     }),
 
     handleSubmit(values, { setStatus, resetForm }) {
